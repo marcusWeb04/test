@@ -1,0 +1,24 @@
+name: CI
+
+on:
+    push:
+
+jobs:
+    build:
+        run-on: windows-11
+        steps:
+            #recuperer le dépots
+            - uses: actions/checkout@7
+
+            #installer node js
+            - uses: actions/setup-node@7
+            with:
+                node-version: 24.13.1
+
+            run: npm ci
+
+            run: npm run build
+
+            -uses: actions/upload-artifact@v7
+            with:
+                paath: dist/
