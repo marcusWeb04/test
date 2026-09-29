@@ -1,0 +1,20 @@
+{
+  "name": "premier-projet",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000t\u0000e\u0000s\u0000t\u0000\r\u0000 \u0000",
+  "homepage": "https://github.com/marcusWeb04/test#readme",
+  "bugs": {
+    "url": "https://github.com/marcusWeb04/test/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusWeb04/test.git"
+  },
+  "license": "ISC",
+  "author": "Marcus",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
