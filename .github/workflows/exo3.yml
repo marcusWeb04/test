@@ -5,18 +5,24 @@ on:
 
 jobs:
     build:
-        run-on: windows-11
+        runs-on: windows-11
         steps:
             - uses: actions/checkout@7
 
             - uses: actions/setup-node@7
-            with:
+              with:
                 node-version: 24.13.1
 
-            run: npm ci
+            - run: npm ci
 
-            run: npm run build
+            - run: npm run build
 
-            -uses: actions/upload-artifact@v7
-            with:
-                paath: dist/
+            - uses: actions/upload-artifact@v7
+              with:
+                path: dist/
+    test:
+        matrix:
+            node: [20,22,24]
+            os: [ubuntu-20,windows-11]
+        runs-on: ${{matrix.os}}
+
