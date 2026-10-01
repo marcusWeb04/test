@@ -20,9 +20,24 @@ jobs:
             - uses: actions/upload-artifact@v7
               with:
                 path: dist/
+                
     test:
+        needs:  
+            build
         matrix:
             node: [20,22,24]
             os: [ubuntu-20,windows-11]
         runs-on: ${{matrix.os}}
+
+    deploy:
+        runs-on: windows-11
+        needs: 
+            test
+        steps:
+             -uses: actions/upload-artifact@v7
+             run: echo "${{vars.API_URL}}"
+
+
+
+
 
